@@ -3,10 +3,17 @@ word_list = ['advark', 'baboon', 'camel']
 import random
 
 chosen_word = random.choice(word_list)
+print(f'Pssst, the solution is {chosen_word}')
 guess = input("Guess a Letter: ").lower()
 
-for letter in chosen_word:
+display = []
+for _ in range(len(chosen_word)):
+    display += "_"
+print(display)
+
+for position in range(len(chosen_word)):
+    letter = chosen_word[position]
     if letter == guess:
-        print("Right")
-    else:
-        print('False')
+        display[position] = letter
+
+print(display)
